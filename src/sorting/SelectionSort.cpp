@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include "sorting/selectionsort.h"
 
 void selectionSort(std::vector<int> &arr) {
 
@@ -12,17 +11,4 @@ void selectionSort(std::vector<int> &arr) {
     }
     std::swap(arr[i], arr[minindex]);
   }
-}
-
-int main() {
-  std::vector<int> arr = {64, 25, 12, 22, 11};
-
-  selectionSort(arr);
-
-  for (int i : arr) {
-    std::cout << i << " ";
-  }
-  std::cout << std::endl;
-
-  return 0;
 }
