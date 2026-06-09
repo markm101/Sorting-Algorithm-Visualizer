@@ -42,12 +42,20 @@ int main() {
 
   std::vector<int> arr = {64, 25, 12, 22, 11,  45, 78, 33, 90,
                           15, 20, 50, 80, 100, 2,  1,  5,  8};
-  selectionSort(arr, window);
+  std::vector<int> newarr = arr;
+  selectionSort(newarr, window);
 
   while (window.isOpen()) {
     while (auto event = window.pollEvent()) {
       if (event->is<sf::Event::Closed>())
         window.close();
+      if (event->is<sf::Event::KeyPressed>()) {
+        if (event->getIf<sf::Event::KeyPressed>()->code ==
+            sf::Keyboard::Key::R) {
+          newarr = arr;
+          selectionSort(newarr, window);
+        }
+      }
     }
   }
 
