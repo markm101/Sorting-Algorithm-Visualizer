@@ -1,4 +1,6 @@
 #pragma once
 #include <vector>
 
-void selectionSort(std::vector<int> &arr);
+#include "visuals/visualizer.h"
+
+void selectionSort(std::vector<int> &arr, sf::RenderWindow &window);

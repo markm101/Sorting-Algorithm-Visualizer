@@ -1,9 +1,13 @@
-#include <SFML/Graphics.hpp>
+#include "visuals/visualizer.h"
 
-#include <algorithm>
-#include <vector>
+#include "sorting/selectionsort.h"
 
 void render(std::vector<int> &arr, sf::RenderWindow &window) {
+
+  while (auto event = window.pollEvent()) {
+    if (event->is<sf::Event::Closed>())
+      window.close();
+  }
 
   window.clear();
 
@@ -38,40 +42,12 @@ int main() {
 
   std::vector<int> arr = {64, 25, 12, 22, 11,  45, 78, 33, 90,
                           15, 20, 50, 80, 100, 2,  1,  5,  8};
-
-  // sorting variables
-
-  int idx = 0;
-  int p = 1;
-  int minindex = 0;
-  sf::Clock clock;
+  selectionSort(arr, window);
 
   while (window.isOpen()) {
     while (auto event = window.pollEvent()) {
       if (event->is<sf::Event::Closed>())
         window.close();
-    }
-
-    render(arr, window);
-
-    if (idx >= arr.size()) {
-      continue;
-    }
-    // Selection Sorting
-
-    if (clock.getElapsedTime().asMilliseconds() >= 50) {
-      if (p < arr.size()) {
-        if (arr[minindex] > arr[p]) {
-          minindex = p;
-        }
-        p += 1;
-      } else {
-        std::swap(arr[idx], arr[minindex]);
-        idx += 1;
-        minindex = idx;
-        p = idx + 1;
-      }
-      clock.restart();
     }
   }
 
