@@ -17,7 +17,7 @@ void render(std::vector<int> &arr, sf::RenderWindow &window,
   sf::Color finalized = sf::Color::Green;
 
   // Text Params
-  static sf::Font font("../assets/fonts/Roboto/static/Roboto-Bold.ttf");
+  sf::Font font("../assets/fonts/Roboto-Bold.ttf");
 
   sf::Text text(font, algoName, 24);
   text.setPosition(sf::Vector2f(10.f, 10.f));

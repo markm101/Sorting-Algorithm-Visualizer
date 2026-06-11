@@ -1,5 +1,7 @@
 #include "sorting/bubblesort.h"
 
+#include "visuals/visualizer.h"
+
 void BubbleSort(std::vector<int> &arr, sf::RenderWindow &window) {
 
   bool has_Swap = true;
@@ -9,6 +11,7 @@ void BubbleSort(std::vector<int> &arr, sf::RenderWindow &window) {
       if (arr[i] > arr[i + 1]) {
         std::swap(arr[i], arr[i + 1]);
         has_Swap = true;
+
         sf::sleep(sf::milliseconds(100)); // For visualization
         render(arr, window, "Bubble Sort");
       }

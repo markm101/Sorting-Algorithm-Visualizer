@@ -10,8 +10,6 @@ int main() {
                           15, 20, 50, 80, 100, 2,  1,  5,  8};
   std::vector<int> newarr = arr;
 
-  sf::Font font("../assets/fonts/Roboto/static/Roboto-Bold.ttf");
-
   while (window.isOpen()) {
     while (auto event = window.pollEvent()) {
       if (event->is<sf::Event::Closed>())

@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
+#include <SFML/Graphics.hpp>
 
-#include "visuals/visualizer.h"
+#include <vector>
 
 void BubbleSort(std::vector<int> &arr, sf::RenderWindow &window);
