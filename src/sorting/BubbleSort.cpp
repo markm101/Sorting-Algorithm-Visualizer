@@ -1,8 +1,6 @@
-#include <iostream>
-#include <utility>
-#include <vector>
+#include "sorting/bubblesort.h"
 
-void BubbleSort(std::vector<int> &arr) {
+void BubbleSort(std::vector<int> &arr, sf::RenderWindow &window) {
 
   bool has_Swap = true;
   while (has_Swap == true) {
@@ -11,20 +9,9 @@ void BubbleSort(std::vector<int> &arr) {
       if (arr[i] > arr[i + 1]) {
         std::swap(arr[i], arr[i + 1]);
         has_Swap = true;
+        sf::sleep(sf::milliseconds(100)); // For visualization
+        render(arr, window);
       }
     }
   }
-}
-
-int main() {
-  std::vector<int> arr = {64, 25, 12, 22, 11, 45, 78, 33, 90, 15};
-
-  BubbleSort(arr);
-
-  for (int i : arr) {
-    std::cout << i << " ";
-  }
-  std::cout << std::endl;
-
-  return 0;
 }
