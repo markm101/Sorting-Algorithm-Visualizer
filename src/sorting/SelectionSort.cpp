@@ -1,5 +1,7 @@
 #include "sorting/selectionsort.h"
 
+#include "visuals/visualizer.h"
+
 void selectionSort(std::vector<int> &arr, sf::RenderWindow &window) {
 
   for (int i = 0; i < int(arr.size()); i++) {
@@ -12,6 +14,6 @@ void selectionSort(std::vector<int> &arr, sf::RenderWindow &window) {
     std::swap(arr[i], arr[minindex]);
 
     sf::sleep(sf::milliseconds(100)); // For visualization
-    render(arr, window);
+    render(arr, window, "Selection Sort");
   }
 }

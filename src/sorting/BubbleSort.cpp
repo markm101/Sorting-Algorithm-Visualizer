@@ -10,7 +10,7 @@ void BubbleSort(std::vector<int> &arr, sf::RenderWindow &window) {
         std::swap(arr[i], arr[i + 1]);
         has_Swap = true;
         sf::sleep(sf::milliseconds(100)); // For visualization
-        render(arr, window);
+        render(arr, window, "Bubble Sort");
       }
     }
   }
