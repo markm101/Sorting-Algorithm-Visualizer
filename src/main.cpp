@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "sorting/bubblesort.h"
+#include "sorting/insertionsort.h"
 #include "sorting/selectionsort.h"
 
 int main() {
@@ -24,6 +25,11 @@ int main() {
             sf::Keyboard::Key::Num2) {
           newarr = arr;
           BubbleSort(newarr, window);
+        }
+        if (event->getIf<sf::Event::KeyPressed>()->code ==
+            sf::Keyboard::Key::Num3) {
+          newarr = arr;
+          InsertionSort(newarr, window);
         }
       }
     }
