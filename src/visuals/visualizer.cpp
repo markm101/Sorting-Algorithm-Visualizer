@@ -17,7 +17,9 @@ void render(std::vector<int> &arr, sf::RenderWindow &window,
   sf::Color finalized = sf::Color::Green;
 
   // Text Params
-  sf::Font font("../assets/fonts/Roboto-Bold.ttf");
+  sf::Font font(
+      "../assets/fonts/Roboto-Bold.ttf"); // can't be static w/o crashing
+                                          // and needs a new approach
 
   sf::Text text(font, algoName, 24);
   text.setPosition(sf::Vector2f(10.f, 10.f));
@@ -26,7 +28,7 @@ void render(std::vector<int> &arr, sf::RenderWindow &window,
   // Bar Rendering
   int maxValue = *std::max_element(arr.begin(), arr.end());
 
-  for (int i = 0; i < arr.size(); i++) {
+  for (int i = 0; i < int(arr.size()); i++) {
     float space_width = static_cast<float>(window.getSize().x) / arr.size();
     float bar_width = space_width * 0.8f; // 80% bar, 20% gap
     float bar_height =
