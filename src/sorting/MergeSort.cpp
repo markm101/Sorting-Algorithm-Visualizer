@@ -31,14 +31,17 @@ void inner_merge(std::vector<int> &arr, int left, int right,
     j++;
   }
 
-  for (int k = 0; k < temp.size(); k++) {
+  for (int k = 0; k < int(temp.size()) && window.isOpen(); k++) {
     arr[k + left] = temp[k];
+
+    sf::sleep(sf::milliseconds(80));
+    render(arr, window, "Merge Sort");
   }
 }
 
 void outer_merge(std::vector<int> &arr, int left, int right,
                  sf::RenderWindow &window) {
-  if (left >= right) {
+  if (left >= right || !window.isOpen()) {
     return;
   }
 
@@ -47,12 +50,12 @@ void outer_merge(std::vector<int> &arr, int left, int right,
   outer_merge(arr, left, mid, window);
   outer_merge(arr, mid + 1, right, window);
   inner_merge(arr, left, right, window);
-
-  sf::sleep(sf::milliseconds(300));
-  render(arr, window, "Merge Sort");
 }
 
 void MergeSort(std::vector<int> &arr, sf::RenderWindow &window) {
+  if (arr.empty()) {
+    return;
+  }
 
-  outer_merge(arr, 0, arr.size() - 1, window);
+  outer_merge(arr, 0, int(arr.size()) - 1, window);
 }
