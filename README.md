@@ -22,6 +22,7 @@ Run the app, then press one of the number keys:
 | `2` | Bubble Sort |
 | `3` | Insertion Sort |
 | `4` | Merge Sort |
+| `R` | Randomize array and rerun last algorithm |
 
 Close the SFML window to exit.
 
