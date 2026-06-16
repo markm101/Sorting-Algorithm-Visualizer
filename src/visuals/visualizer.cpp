@@ -39,10 +39,14 @@ void render(std::vector<int> &arr, sf::RenderWindow &window,
     // Adjust Bar Width and Bar Height with Ratios
 
     sf::RectangleShape bar(sf::Vector2f(bar_width, bar_height));
+    sf::Text label(font, std::to_string(arr[i]), 20);
 
     bar.setPosition(sf::Vector2f(x_pos, y_pos));
+    label.setPosition(sf::Vector2f(x_pos, y_pos));
     bar.setFillColor(barColor);
+    label.setFillColor(sf::Color::Black);
     window.draw(bar);
+    window.draw(label);
   }
   window.draw(text);
   window.display();
