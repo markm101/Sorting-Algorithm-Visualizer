@@ -17,11 +17,13 @@ int partition(std::vector<int> &arr, int low, int high,
       std::swap(arr[i], arr[j]);
       i = i + 1;
       render(arr, window, "Quick Sort");
+      sf::sleep(sf::milliseconds(80));
     }
   }
   std::swap(arr[i], arr[high]);
 
   render(arr, window, "Quick Sort");
+  sf::sleep(sf::milliseconds(80));
 
   return i;
 }
