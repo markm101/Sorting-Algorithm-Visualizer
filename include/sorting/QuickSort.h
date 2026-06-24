@@ -3,7 +3,9 @@
 
 #include <vector>
 
-int partition(std::vector<int> &arr, int low, int high);
+int partition(std::vector<int> &arr, int low, int high,
+              sf::RenderWindow &window);
 
-void quickSort(std::vector<int> &arr, int low, int high);
-void quickSort(std::vector<int> &arr, sf::Window &window);
+void quickMasterSort(std::vector<int> &arr, int low, int high,
+                     sf::RenderWindow &window);
+void quickSort(std::vector<int> &arr, sf::RenderWindow &window);

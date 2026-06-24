@@ -3,6 +3,7 @@
 
 #include <functional>
 
+#include "sorting/QuickSort.h"
 #include "sorting/bubblesort.h"
 #include "sorting/insertionsort.h"
 #include "sorting/mergesort.h"
@@ -48,6 +49,12 @@ int main() {
           lastAlgo = MergeSort;
           newarr = arr;
           MergeSort(newarr, window);
+        }
+        if (event->getIf<sf::Event::KeyPressed>()->code ==
+            sf::Keyboard::Key::Num5) {
+          lastAlgo = quickSort;
+          newarr = arr;
+          quickSort(newarr, window);
         }
 
         // Misc Events

@@ -6,7 +6,8 @@
 
 #include "visuals/visualizer.h"
 
-int partition(std::vector<int> &arr, int low, int high, sf::Window &window) {
+int partition(std::vector<int> &arr, int low, int high,
+              sf::RenderWindow &window) {
 
   int pivot = arr[high];
   int i = low;
@@ -25,18 +26,19 @@ int partition(std::vector<int> &arr, int low, int high, sf::Window &window) {
   return i;
 }
 
-void quickSort(std::vector<int> &arr, int low, int high, sf::Window &window) {
+void quickMasterSort(std::vector<int> &arr, int low, int high,
+                     sf::RenderWindow &window) {
   if (low >= high)
     return;
 
   int pivotIndex = partition(arr, low, high, window);
 
-  quickSort(arr, low, pivotIndex - 1, window);
-  quickSort(arr, pivotIndex + 1, high, window);
+  quickMasterSort(arr, low, pivotIndex - 1, window);
+  quickMasterSort(arr, pivotIndex + 1, high, window);
 }
 
-void quickSort(std::vector<int> &arr, sf::Window &window) {
+void quickSort(std::vector<int> &arr, sf::RenderWindow &window) {
   if (arr.size() < 1)
     return;
-  quickSort(arr, 0, arr.size() - 1, window);
+  quickMasterSort(arr, 0, arr.size() - 1, window);
 }
